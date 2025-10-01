@@ -6,7 +6,7 @@ public class Tugas3_sistemwifikampus {
 
         
         System.out.println("\n=== Sistem WiFi Kampus ===");
-        sc.nextLine(); 
+        sc.nextLine(); // clear buffer
         System.out.print("Masukkan jenis pengguna (dosen/mahasiswa/lain): ");
         String jenisPengguna = sc.nextLine().trim();
 
