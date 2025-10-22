@@ -17,17 +17,22 @@ public class CM1_25 {
         System.out.println("\n--- Mata Kuliah 1 ---");
         System.out.print("Nilai UTS Algoritma dan Pemrograman: "); //masukkan nilai uts Algoritma dan Pemrograman
         double utsAlgo = sc.nextDouble();
+        cekValid(utsAlgo);
+
         System.out.print("Nilai UAS Algoritma dan Pemrograman: "); //masukkan nilai uas Algoritma dan Pemrograman
         double uasAlgo = sc.nextDouble();
+        cekValid(uasAlgo);
+
         System.out.print("Nilai Tugas Algoritma dan Pemrograman: "); //masukkan nilai tugas Algoritma dan Pemrograman
         double tugasAlgo = sc.nextDouble();
+        cekValid(tugasAlgo);
 
         //menghitung nilai akhir Algoritma dan Pemrograman
         double nilaiAkhirAlgo = (utsAlgo * 0.3) + (uasAlgo * 0.4) + (tugasAlgo * 0.3);
 
         //menentukan status kelulusan mata kuliah 1
         String statusAlgo;
-        if (nilaiAkhirAlgo >= 60) { 
+        if (nilaiAkhirAlgo >= 60 && nilaiAkhirAlgo <= 100) { 
             statusAlgo = "LULUS";
         } else {
             statusAlgo = "TIDAK LULUS";
@@ -40,17 +45,22 @@ public class CM1_25 {
         System.out.println("\n--- Mata Kuliah 2 ---");
         System.out.print("Nilai UTS Struktur Data: "); //masukkan nilai uts Struktur Data
         double utsSD = sc.nextDouble();
+        cekValid(utsSD);
+        
         System.out.print("Nilai UAS Struktur Data: "); //masukkan nilai uas Struktur Data
         double uasSD = sc.nextDouble();
+        cekValid(uasSD);
+
         System.out.print("Nilai Tugas Struktur Data: "); //masukkan nilai tugas Struktur Data
         double tugasSD = sc.nextDouble();
+        cekValid(tugasSD);
 
         //menghitung nilai akhir Struktur Data
         double nilaiAkhirSD = (utsSD * 0.3) + (uasSD * 0.4) + (tugasSD * 0.3);
 
         //menentukan status kelulusan mata kuliah 2
         String statusSD;
-        if (nilaiAkhirSD >= 60) { 
+        if (nilaiAkhirSD >= 60 && nilaiAkhirAlgo <= 100) { 
             statusSD = "LULUS";
         } else {
             statusSD = "TIDAK LULUS";
@@ -64,6 +74,9 @@ public class CM1_25 {
 
         //menentukan status kelulusan semester dengan nested if
         String statusSemester;
+        //if (nilaiAkhirAlgo > 100 || nilaiAkhirSD > 100 || rataRata > 100) {
+            //statusSemester = "TIDAK LULUS KARENA NILAI TIDAK VALID";
+        //} else 
         if (statusAlgo.equals("LULUS") && statusSD.equals("LULUS")) {
             if (rataRata >= 70) {
                 statusSemester = "LULUS";
@@ -87,7 +100,9 @@ public class CM1_25 {
     //=== FUNGSI UNTUK MENGONVERSI NILAI ANGKA KE HURUF ===
     public static String konversiNilai(double nilai) {
         //mengonversi nilai menjadi huruf A–E sesuai rentang nilai
-        if (nilai >= 85) {
+        if (nilai > 100 || nilai < 0) {
+            return "Tidak Valid";
+        } else if (nilai >= 85) {
             return "A";
         } else if (nilai >= 75) {
             return "B";
@@ -99,4 +114,10 @@ public class CM1_25 {
             return "E";
         }
     }
+    public static void cekValid(double nilai) {
+            if (nilai < 0 || nilai > 100) {
+                System.out.println("Nilai tidak valid! Program dihentikan.");
+                System.exit(0);
+            }
+        }
 }
