@@ -30,7 +30,7 @@ public class NilaiKelompok25 {
             kelompok++;
         }
 
-        System.out.println("Kelompok dengan rata-rata tertinggi : Kelompok " + bestKel + " (rata-rata = )" + String.format("%.2f", bestRata) + ")");
+        System.out.println("Kelompok dengan rata-rata tertinggi : Kelompok " + bestKel + " (rata-rata = " + String.format("%.2f", bestRata) + ")");
         
         sc.close();
     }
