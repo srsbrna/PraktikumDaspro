@@ -14,9 +14,9 @@ public class arrayNilai25 {
 
         for (int i = 0; i < nilaiAkhir.length; i++) {
             if (nilaiAkhir[i] > 70){
-                System.out.println("Mahasiswa ke-" + (i+1) + " LULUS (" + nilaiAkhir[i] + ")");
+                System.out.println("Mahasiswa ke-" + (i+1) + " LULUS ");
             } else {
-                System.out.println("Mahasiswa ke-" + (i+1) + " TIDAK LULUS (" + nilaiAkhir[i] + ")");
+                System.out.println("Mahasiswa ke-" + (i+1) + " TIDAK LULUS ");
             }
         }
     }
