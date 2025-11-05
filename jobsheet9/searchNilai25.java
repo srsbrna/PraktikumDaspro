@@ -24,5 +24,10 @@ public class searchNilai25 {
                 break;
             }
         }
+
+        if(!found){
+            System.out.println();
+            System.out.println("Nilai yang dicari tidak ditemukan");
+        }
     }
 }
