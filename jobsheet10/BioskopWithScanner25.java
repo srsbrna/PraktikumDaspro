@@ -25,14 +25,14 @@ public class BioskopWithScanner25 {
                 System.out.println("Masukkan nomor kolom (0-1): ");
                 int kolom = sc.nextInt();
                 sc.nextLine();
-
-                
+                penonton[baris][kolom] = nama;
             } else if (menu == 2){
-                System.out.println("\nDaftar Penonton: ");
+                System.out.println("Daftar Penonton: ");
                 for (int i = 0; i < penonton.length; i++) {
                     for (int j = 0; j < penonton[i].length; j++) {
-                        //System.out.print((penonton[i][j] == null ? ));
+                        System.out.print(penonton[i][j] + "\t");
                     }
+                    System.out.println();
                 }
             }
         } while (menu != 3);
