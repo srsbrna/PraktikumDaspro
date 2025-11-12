@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class numbers25 {
     public static void main(String[] args) {
@@ -8,7 +7,7 @@ public class numbers25 {
         myNumbers[2] = new int[1];
 
         for (int i = 0; i < myNumbers.length; i++) {
-            System.out.println(Arrays.toString(myNumbers[i]));
+            System.out.println("panjang baris ke-" + (i+1) + ": " + myNumbers[i].length);
         }
     }
 }
