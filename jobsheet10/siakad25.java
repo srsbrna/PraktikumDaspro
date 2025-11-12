@@ -4,31 +4,35 @@ public class siakad25 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        int[][] nilai = new int[4][3];
-        
-        for (int i = 0; i < nilai.length; i++){
-            System.out.println("Input nilai mahasiswa ke-" + (i+1));
-            double totalPerSiswa = 0;
+        System.out.println("Masukkan jumlah siswa: ");
+        int siswa = sc.nextInt();
+        System.out.println("Masukkan jumlah mata kuliah: ");
+        int matkul = sc.nextInt();
 
-            for (int j = 0; j < nilai[i].length; j++){
+        int[][] nilai = new int[siswa][matkul];
+        
+        for (int i = 0; i < siswa; i++){
+            System.out.println("\nInput nilai mahasiswa ke-" + (i+1));
+            for (int j = 0; j < matkul; j++){
                 System.out.println("Nilai mata kuliah " + (j+1) + ": ");
                 nilai[i][j] = sc.nextInt();
-                totalPerSiswa += nilai[i][j];
             }
-
-            System.out.println("Nilai rata-rata: " + totalPerSiswa/3);
         }
 
         System.out.println("\n==================================");
-        System.out.println("Rata-rata Nilai setiap Mata Kuliah");
+        System.out.println("Rata-rata Nilai Siswa");
 
-        for (int j = 0; j < 3; j++){
-            double totPerMatkul = 0;
+        for (int i = 0; i < siswa; i++){
+            int total = 0;
+            for (int j = 0; j < matkul; j++) total += nilai[i][j] ;
+            System.out.println("Siswa ke-" + (i+1) + ": " + total / matkul);
+        }
 
-            for (int i = 0; i < 4; i++){
-                totPerMatkul += nilai[i][j];
-            }
-            System.out.println("Mata kuliah " + (j+1) + ": " + totPerMatkul / 4);
+        System.out.println("\nRata-rata nilai per mata kuliah: ");
+        for (int j = 0; j < matkul; j++){
+            int total = 0;
+            for (int i = 0; i < siswa; i++) total += nilai[i][j];
+            System.out.println("Mata kuliah ke-" + (j+1) + ": " + (total / siswa));
         }
         
         sc.close();
