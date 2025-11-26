@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class kubus25 {
-    // Fungsi menghitung volume kubus
+
     public static int hitungVolume(int sisi) {
         return sisi * sisi * sisi;
     }
 
-    // Fungsi menghitung luas permukaan kubus
+
     public static int hitungLuasPermukaan(int sisi) {
         return 6 * sisi * sisi;
     }
