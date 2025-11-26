@@ -1,5 +1,7 @@
 package Jobsheet12;
 
+import java.util.Scanner;
+
 public class kafe25 {
     public static void menu(String namaPelanggan, boolean isMember, String kodePromo) {
         System.out.println("Selamat datang, " + namaPelanggan + "!!");
@@ -29,7 +31,33 @@ public class kafe25 {
         System.out.println("============================\n");
     }
 
+    public static int hitungTotalHarga25(int pilihanMenu, int banyakPesanan){
+
+        int[] hargaMenu = {0, 15000, 20000, 22000, 10000, 18000};
+
+        if (pilihanMenu < 1 || pilihanMenu > 5) {
+            System.out.println("Pilihan menu tidak valid!");
+            return 0;
+        }
+
+        int total = hargaMenu[pilihanMenu] * banyakPesanan;
+        return total;
+    }
+
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         menu("Andi", true, "DISKON30");
+
+        System.out.println("Masukkan nomor menu yang dipilih: ");
+        int pilihan = sc.nextInt();
+
+        System.out.println("Masukkan jumlah pesanan: ");
+        int jumlah = sc.nextInt();
+
+        int totalBayar = hitungTotalHarga25(pilihan, jumlah);
+
+        System.out.println("\nTotal yang harus dibayar: Rp" + totalBayar);
     }
 }
