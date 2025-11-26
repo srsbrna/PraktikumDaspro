@@ -36,7 +36,7 @@ public class kafe25 {
             System.out.println("\nKode promo valid! Anda mendapat diskon 50%");
         } else if (kodePromo.equalsIgnoreCase("DISKON30")){
             diskon = 0.3 * totAkhir;
-            System.out.println("\node promo valid! Anda mendapat diskon 30%");
+            System.out.println("\nKode promo valid! Anda mendapat diskon 30%");
         } else {
             System.out.println("\nKode promo tidak valid! Tidak ada diskon.");
         }
@@ -55,9 +55,19 @@ public class kafe25 {
         }
     }
 
+    static void daftarPengunjung(String... namaPengunjung) {
+        System.out.println("\n===== Daftar Nama Pengunjung =====");
+        for (String nama : namaPengunjung) {
+            System.out.println("- " + nama); 
+        }
+    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+
+        daftarPengunjung("Ali", "Budi", "Citra");
+        daftarPengunjung("Andi");
+        daftarPengunjung("Doni", "Eti", "Citra");
 
         menu("Andi", true, "DISKON30");
 
